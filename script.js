@@ -15,17 +15,17 @@ const bands = [
   'An Old Dog'
 ];
 
-// remove a, an, the
-function stripArticle(text) {
+// function to remove a, an, the
+function removeArticle(text) {
   return text.replace(/^(a |an |the )/i, '').trim();
 }
 
-// sort ignoring articles
+// sort bands alphabetically ignoring articles
 bands.sort((a, b) => {
-  return stripArticle(a).localeCompare(stripArticle(b));
+  return removeArticle(a).localeCompare(removeArticle(b));
 });
 
-// display list
+// display list in UL
 const ul = document.getElementById("band");
 
 bands.forEach(band => {
